@@ -10,7 +10,7 @@ http://archive.ics.uci.edu/ml/datasets/Chronic_Kidney_Disease
 
 The source of the dataset is Dr. P .Soundarapandian M.D., D.M (Senior Consultant Nephrologist), Apollo Hospitals, Managiri, Madurai Main Road, Karaikudi, Tamilnadu, India. The dataset was found in the UCI Machine Learning Repository.
 
-This dataset has 400 observations and 25 variables.
+This dataset has 400 observations and 25 variables. (250 ckd, 150 notckd)
 1. age: age in years
 2. bp: Blood pressure in mm of Hg.
 3. sg: Specific Gravity
@@ -37,12 +37,12 @@ This dataset has 400 observations and 25 variables.
 24. ane: Anemia - (yes,no)
 25. class: Class - (ckd,notckd)
 
-## Proposed Model Implementations
+## Proposed Model Types
 - Logistic Regression
 - Decision Tree
 - Neural Network
 
 ## Preprocessing
-- Encode nominal attributes
-- Decide how to handle missing values
+- Encode nominal attributes.
+- Handle missing values.
 

@@ -1,0 +1,26 @@
+library(readr)
+
+# import dataset, coercing attributes to the appriopriate type
+chronic_kidney_disease <- read_csv("chronic_kidney_disease_dataset/chronic_kidney_disease.csv", 
+col_types = cols(age = col_number(), 
+    al = col_factor(levels = c("0", "1", 
+        "2", "3", "4", "5")), ane = col_factor(levels = c("yes", 
+        "no")), appet = col_factor(levels = c("good", 
+        "poor")), ba = col_factor(levels = c("present", 
+        "notpresent")), bgr = col_number(), 
+    bp = col_number(), bu = col_number(), 
+    cad = col_factor(levels = c("yes", 
+        "no")), class = col_factor(levels = c("ckd", 
+        "notckd")), dm = col_factor(levels = c("yes", 
+        "no")), hemo = col_number(), 
+    htn = col_factor(levels = c("yes", 
+        "no")), pc = col_factor(levels = c("normal", 
+        "abnormal")), pcc = col_factor(levels = c("present", 
+        "notpresent")), pcv = col_number(), 
+    pe = col_factor(levels = c("yes", 
+        "no")), pot = col_number(), rbc = col_factor(levels = c("normal", 
+        "abnormal")), rbcc = col_number(), 
+    sc = col_number(), sg = col_factor(levels = c("1.005", 
+        "1.010", "1.015", "1.020", "1.025")), 
+    sod = col_number(), su = col_factor(levels = c("0", 
+        "1", "2", "3", "4", "5")), wbcc = col_number()))
