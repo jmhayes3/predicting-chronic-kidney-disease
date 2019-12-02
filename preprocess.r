@@ -1,7 +1,7 @@
 library(readr)
 
 # import dataset, coercing attributes to the appriopriate type
-chronic_kidney_disease <- read_csv("chronic_kidney_disease_dataset/chronic_kidney_disease.csv", 
+chronic_kidney_disease <- read_csv("projects/data_science_project/chronic_kidney_disease_dataset/chronic_kidney_disease.csv", 
 col_types = cols(age = col_number(), 
     al = col_factor(levels = c("0", "1", 
         "2", "3", "4", "5")), ane = col_factor(levels = c("yes", 
@@ -24,3 +24,24 @@ col_types = cols(age = col_number(),
         "1.010", "1.015", "1.020", "1.025")), 
     sod = col_number(), su = col_factor(levels = c("0", 
         "1", "2", "3", "4", "5")), wbcc = col_number()))
+
+# drop attributes with numerous missing values
+chronic_kidney_disease <- chronic_kidney_disease[1:nrow(chronic_kidney_disease),-c(6, 13, 14, 17, 18)]
+
+# use only rows containing no missing values
+data <- chronic_kidney_disease[complete.cases(chronic_kidney_disease),]
+
+# take random sample of 50% of observations and split into training and testing sets
+RNGkind(sample.kind = "Rounding")
+set.seed(1)
+train <- sample(1:nrow(data), nrow(data)/2)
+data.test <- data[-train,]
+data.test.labels <- data[-train, c(20)]
+data.train <- data[train,]
+
+# build decision tree
+library(tree)
+data.train.tree = tree(class ~ ., data=data.train)
+plot(data.train.tree)
+text(data.train.tree, pretty=0)
+tree.pred = predict(data.train.tree, newdata=data.test, type="class")
