@@ -26,7 +26,7 @@ col_types = cols(age = col_number(),
         "1", "2", "3", "4", "5")), wbcc = col_number()))
 
 # drop attributes with numerous missing values
-chronic_kidney_disease <- chronic_kidney_disease[1:nrow(chronic_kidney_disease),-c(6, 13, 14, 17, 18)]
+chronic_kidney_disease <- chronic_kidney_disease[1:nrow(chronic_kidney_disease), -c(3, 4, 5, 6, 7, 10, 13, 14, 15, 16, 17, 18)]
 
 # use only rows containing no missing values
 data <- chronic_kidney_disease[complete.cases(chronic_kidney_disease),]
@@ -36,12 +36,4 @@ RNGkind(sample.kind = "Rounding")
 set.seed(1)
 train <- sample(1:nrow(data), nrow(data)/2)
 data.test <- data[-train,]
-data.test.labels <- data[-train, c(20)]
 data.train <- data[train,]
-
-# build decision tree
-library(tree)
-data.train.tree = tree(class ~ ., data=data.train)
-plot(data.train.tree)
-text(data.train.tree, pretty=0)
-tree.pred = predict(data.train.tree, newdata=data.test, type="class")
