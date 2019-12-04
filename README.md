@@ -27,12 +27,12 @@ This dataset has 400 observations and 25 variables. (250 ckd, 150 notckd)
 14. pot: Potassium in mEq/L
 15. hemo: Hemoglobin in gms
 16. pcv: Packed Cell Volume
-17. wc: White Blood Cell Count in cells/cumm
-18. rc: Red Blood Cell Count in millions/cmm
+17. wbcc: White Blood Cell Count in cells/cumm
+18. rbcc: Red Blood Cell Count in millions/cmm
 19. htn: Hypertension - (yes,no)
 20. dm: Diabetes Mellitus - (yes,no)
 21. cad: Coronary Artery Disease - (yes,no)
-22. appt: Appetite - (good,poor)
+22. appet: Appetite - (good,poor)
 23. pe: Pedal Edema - (yes,no)
 24. ane: Anemia - (yes,no)
 25. class: Class - (ckd,notckd)

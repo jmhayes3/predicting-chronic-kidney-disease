@@ -25,7 +25,7 @@ col_types = cols(age = col_number(),
     sod = col_number(), su = col_factor(levels = c("0", 
         "1", "2", "3", "4", "5")), wbcc = col_number()))
 
-# drop attributes with numerous missing values
+# drop attributes with >10% missing values
 chronic_kidney_disease <- chronic_kidney_disease[1:nrow(chronic_kidney_disease), -c(3, 4, 5, 6, 7, 10, 13, 14, 15, 16, 17, 18)]
 
 # use only rows containing no missing values
