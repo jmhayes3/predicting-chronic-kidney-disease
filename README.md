@@ -37,12 +37,7 @@ This dataset has 400 observations and 25 variables. (250 ckd, 150 notckd)
 24. ane: Anemia - (yes,no)
 25. class: Class - (ckd,notckd)
 
-## Proposed Model Types
-- Logistic Regression
+## Models
 - Decision Tree
+- Random Forest
 - Neural Network
-
-## Preprocessing
-- Encode nominal attributes.
-- Handle missing values.
-
